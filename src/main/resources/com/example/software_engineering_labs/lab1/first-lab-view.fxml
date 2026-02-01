@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.software_engineering_labs.lab1.FirstLabController">
+
+    <!-- Верхняя панель: управление сервером -->
+    <top>
+        <HBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Button text="▶ Старт сервера" onAction="#startServer"/>
+            <Button text="⏹ Стоп сервера" onAction="#stopServer"/>
+            <Label fx:id="serverStateLabel" text="Сервер: неактивен"/>
+        </HBox>
+    </top>
+
+    <!-- Центр: наблюдатели -->
+    <center>
+        <VBox spacing="20" alignment="CENTER">
+            <!-- Наблюдатель 1 -->
+            <Label fx:id="timeLabel"
+                   text="Прошло 0 с"
+                   style="-fx-font-size: 18px"/>
+
+            <!-- Наблюдатель 2 -->
+            <Circle fx:id="signalCircle"
+                    radius="20"
+                    fill="GRAY"/>
+
+            <!-- Наблюдатель 3 -->
+            <Pane prefHeight="120" prefWidth="300"
+                  style="-fx-border-color: black">
+                <Rectangle fx:id="animationRect"
+                           width="40"
+                           height="40"
+                           fill="BLUE"
+                           layoutX="10"
+                           layoutY="40"/>
+            </Pane>
+        </VBox>
+    </center>
+
+</BorderPane>
