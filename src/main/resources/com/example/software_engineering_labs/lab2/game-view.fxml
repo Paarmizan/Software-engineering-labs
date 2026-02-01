@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.software_engineering_labs.lab2.GameController"
+            prefWidth="400"
+            prefHeight="300">
+
+    <!-- Заголовок -->
+    <top>
+        <Label text="Игра «Угадай число»"
+               BorderPane.alignment="CENTER"
+               style="-fx-font-size: 20px; -fx-font-weight: bold;">
+            <padding>
+                <Insets top="10" bottom="10"/>
+            </padding>
+        </Label>
+    </top>
+
+    <!-- Центр -->
+    <center>
+        <VBox spacing="15" alignment="CENTER">
+            <Label text="Введите число от 1 до 100"/>
+
+            <TextField fx:id="inputField"
+                       maxWidth="150"
+                       promptText="Ваше число"/>
+
+            <Button fx:id="checkButton"
+                    text="Проверить"
+                    onAction="#onCheck"/>
+        </VBox>
+    </center>
+
+    <!-- Низ -->
+    <bottom>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label fx:id="resultLabel"
+                   text="Сделайте ход"
+                   style="-fx-font-size: 14px"/>
+
+            <Label fx:id="attemptsLabel"
+                   text="Осталось попыток: 5"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+        </VBox>
+    </bottom>
+
+</BorderPane>
